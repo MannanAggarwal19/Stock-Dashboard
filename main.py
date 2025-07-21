@@ -18,7 +18,7 @@ def getstock(symbol: str =Path(description="Takes a stock symbol as input")):
     all = fetch_stock_full(symbol)
     price = fast_info.last_price
     vol = fast_info.last_volume
-    change = (fast_info.previous_close - fast_info.last_price)/fast_info.previous_close *100
+    change = (fast_info.last_price - fast_info.previous_close)/fast_info.previous_close *100
     high = fast_info.day_high
     low = fast_info.day_low
     cur = currencies.get(fast_info.currency,"Currency ")
